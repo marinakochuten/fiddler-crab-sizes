@@ -3,9 +3,14 @@ title: "Fiddler Crab"
 format: html
 editor_options: 
   chunk_output_type: console
+execute:
+  echo: FALSE
+  messages: FALSE
+  warnings: FALSE
 ---
 
-```{r}
+```{r} 
+#| output: FALSE
 library(lterdatasampler)
 library(tidyverse)
 
@@ -13,7 +18,18 @@ crab <- pie_crab
 ```
 
 ```{r}
+#| fig-cap: "this is my caption"
 ggplot(crab, aes(x = size, y = latitude)) +
   geom_point()
+```
+
+```{r}
+crab_mean <- crab |>
+  group_by(site) |>
+  summarise(mean = round(mean(size, na.rm = TRUE), 2),
+            sd_size = round(sd(size, na.rm = TRUE), 2),
+            count = n())
+
+crab_mean
 ```
 
