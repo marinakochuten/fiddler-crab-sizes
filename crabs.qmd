@@ -1,0 +1,13 @@
+---
+title: "Fiddler Crab"
+format: html
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+library(lterdatasampler)
+
+pie_crab
+```
+
