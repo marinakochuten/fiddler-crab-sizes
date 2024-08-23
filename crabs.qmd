@@ -7,7 +7,13 @@ editor_options:
 
 ```{r}
 library(lterdatasampler)
+library(tidyverse)
 
-pie_crab
+crab <- pie_crab
+```
+
+```{r}
+ggplot(crab, aes(x = size, y = latitude)) +
+  geom_point()
 ```
 
